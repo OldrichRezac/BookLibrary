@@ -16,7 +16,7 @@ env:
   ARTIFACT_NAME: ${{ github.ref_type == 'tag' && format('libraryapp-{0}', github.ref_name) || format('libraryapp-run-{0}', github.run_number) }}
 
 jobs:
-  build-and-test:
+  unit:
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,7 @@ jobs:
         run: dotnet build LibraryManager.sln --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal
+        run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal --filter "FullyQualifiedName!~Integration&FullyQualifiedName!~E2E"
 
       - name: Publish
         run: dotnet publish src/LibraryApp/LibraryApp.csproj --configuration Release --output publish
@@ -46,8 +46,30 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: publish/**
 
+  integration:
+    needs: unit
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore LibraryManager.sln
+
+      - name: Build
+        run: dotnet build LibraryManager.sln --configuration Release --no-restore
+
+      - name: Integration tests
+        run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal --filter "FullyQualifiedName~LibraryApp.Tests.Integration"
+
   e2e:
-    needs: build-and-test
+    needs: integration
     runs-on: ubuntu-latest
 
     env:
