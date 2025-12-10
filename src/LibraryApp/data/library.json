@@ -151,5 +151,23 @@
     "Isbn": "978-6245911",
     "TotalCopies": 1,
     "AvailableCopies": 1
+  },
+  {
+    "Id": "6bf66cd7-ea0b-4be3-abaf-94fe17999040",
+    "Title": "E2E-dda7",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-6179914",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "f4a9b480-8ecb-4685-9560-ed046aad38c4",
+    "Title": "E2E-3df9",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-4071234",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
   }
 ]

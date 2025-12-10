@@ -178,5 +178,41 @@
     "Isbn": "978-6245911",
     "Action": 2,
     "OccurredAtUtc": "2025-12-10T14:03:01.308838Z"
+  },
+  {
+    "Id": "73f3b6cb-a2fb-4a45-8766-295a67c7858c",
+    "BookId": "6bf66cd7-ea0b-4be3-abaf-94fe17999040",
+    "Title": "E2E-dda7",
+    "Author": "Playwright Tester",
+    "Isbn": "978-6179914",
+    "Action": 1,
+    "OccurredAtUtc": "2025-12-10T16:48:10.7582643Z"
+  },
+  {
+    "Id": "2bb39b61-9d1b-4a0c-8844-d7d0fc17cef1",
+    "BookId": "6bf66cd7-ea0b-4be3-abaf-94fe17999040",
+    "Title": "E2E-dda7",
+    "Author": "Playwright Tester",
+    "Isbn": "978-6179914",
+    "Action": 2,
+    "OccurredAtUtc": "2025-12-10T16:48:11.0216141Z"
+  },
+  {
+    "Id": "7272a657-e4a1-4fcb-b406-db5e57869143",
+    "BookId": "f4a9b480-8ecb-4685-9560-ed046aad38c4",
+    "Title": "E2E-3df9",
+    "Author": "Playwright Tester",
+    "Isbn": "978-4071234",
+    "Action": 1,
+    "OccurredAtUtc": "2025-12-10T16:49:05.4560366Z"
+  },
+  {
+    "Id": "e7477746-ab91-4f68-bf23-e34c50d58c4b",
+    "BookId": "f4a9b480-8ecb-4685-9560-ed046aad38c4",
+    "Title": "E2E-3df9",
+    "Author": "Playwright Tester",
+    "Isbn": "978-4071234",
+    "Action": 2,
+    "OccurredAtUtc": "2025-12-10T16:49:05.7199914Z"
   }
 ]
