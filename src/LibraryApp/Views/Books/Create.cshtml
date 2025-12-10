@@ -11,25 +11,29 @@
 
         <div class="mb-3">
             <label asp-for="Title" class="form-label"></label>
-            <input asp-for="Title" class="form-control" />
+            <input asp-for="Title" class="form-control" placeholder="Např. Pán prstenů" />
+            <div class="form-text">Název knihy (max. 200 znaků)</div>
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Author" class="form-label"></label>
-            <input asp-for="Author" class="form-control" />
+            <input asp-for="Author" class="form-control" placeholder="Např. J. R. R. Tolkien" />
+            <div class="form-text">Jméno autora (max. 200 znaků)</div>
             <span asp-validation-for="Author" class="text-danger"></span>
         </div>
 
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label asp-for="PublishedYear" class="form-label"></label>
-                <input asp-for="PublishedYear" class="form-control" />
+                <input asp-for="PublishedYear" class="form-control" type="number" placeholder="Např. 1954" />
+                <div class="form-text">Rok vydání (0-2100)</div>
                 <span asp-validation-for="PublishedYear" class="text-danger"></span>
             </div>
             <div class="col-md-6 mb-3">
                 <label asp-for="Isbn" class="form-label"></label>
-                <input asp-for="Isbn" class="form-control" />
+                <input asp-for="Isbn" class="form-control" placeholder="Např. 978-80-257-2124-0" />
+                <div class="form-text">ISBN kód knihy (max. 32 znaků)</div>
                 <span asp-validation-for="Isbn" class="text-danger"></span>
             </div>
         </div>
@@ -37,12 +41,14 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label asp-for="TotalCopies" class="form-label"></label>
-                <input asp-for="TotalCopies" class="form-control" />
+                <input asp-for="TotalCopies" class="form-control" type="number" placeholder="Např. 3" />
+                <div class="form-text">Celkový počet kusů knihy v knihovně</div>
                 <span asp-validation-for="TotalCopies" class="text-danger"></span>
             </div>
             <div class="col-md-6 mb-3">
                 <label asp-for="AvailableCopies" class="form-label"></label>
-                <input asp-for="AvailableCopies" class="form-control" />
+                <input asp-for="AvailableCopies" class="form-control" type="number" placeholder="Např. 2" />
+                <div class="form-text">Počet kusů aktuálně dostupných k půjčení (nemůže být větší než celkový počet)</div>
                 <span asp-validation-for="AvailableCopies" class="text-danger"></span>
             </div>
         </div>
