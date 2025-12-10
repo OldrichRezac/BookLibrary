@@ -2,8 +2,8 @@
   {
     "Id": "c5aee10c-7532-4983-b93a-78dafd88c4e3",
     "BookId": "09ddaf65-3134-468a-901c-e786c20ce38a",
-    "Title": "Babička",
-    "Author": "Božena Němcová",
+    "Title": "Babi\u010Dka",
+    "Author": "Bo\u017Eena N\u011Bmcov\u00E1",
     "Isbn": "978-80-206-0747-4",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:49:27.366621Z"
@@ -11,8 +11,8 @@
   {
     "Id": "49923fad-1241-4738-b654-e19c112f1910",
     "BookId": "09ddaf65-3134-468a-901c-e786c20ce38a",
-    "Title": "Babička",
-    "Author": "Božena Němcová",
+    "Title": "Babi\u010Dka",
+    "Author": "Bo\u017Eena N\u011Bmcov\u00E1",
     "Isbn": "978-80-206-0747-4",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:49:28.3050029Z"
@@ -20,8 +20,8 @@
   {
     "Id": "7231b27e-9051-4727-a005-036faf1fcd70",
     "BookId": "2f83ae5b-2b74-4635-9000-bd0ab7364f82",
-    "Title": "Babička",
-    "Author": "Božena Němcová",
+    "Title": "Babi\u010Dka",
+    "Author": "Bo\u017Eena N\u011Bmcov\u00E1",
     "Isbn": "978-80-206-0747-4",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:06.0755301Z"
@@ -29,8 +29,8 @@
   {
     "Id": "de6c384d-e08a-41c3-976d-85f9ec3f4b77",
     "BookId": "2f83ae5b-2b74-4635-9000-bd0ab7364f82",
-    "Title": "Babička",
-    "Author": "Božena Němcová",
+    "Title": "Babi\u010Dka",
+    "Author": "Bo\u017Eena N\u011Bmcov\u00E1",
     "Isbn": "978-80-206-0747-4",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:07.0214608Z"
@@ -38,8 +38,8 @@
   {
     "Id": "de4bc4dd-3878-4c36-9968-39ae8712ab88",
     "BookId": "97324c2c-cb90-4750-b2f3-7a21092d7901",
-    "Title": "Bylo nás pět",
-    "Author": "Karel Poláček",
+    "Title": "Bylo n\u00E1s p\u011Bt",
+    "Author": "Karel Pol\u00E1\u010Dek",
     "Isbn": "978-80-00-05545-7",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:07.7922739Z"
@@ -47,7 +47,7 @@
   {
     "Id": "a645a536-5eab-4fdf-9ff4-b78fb8ff697e",
     "BookId": "0f86982b-290a-441d-9200-5e1f20bff86e",
-    "Title": "Dům o tisíci patrech",
+    "Title": "D\u016Fm o tis\u00EDci patrech",
     "Author": "Jan Weiss",
     "Isbn": "978-80-7388-750-9",
     "Action": 1,
@@ -57,7 +57,7 @@
     "Id": "dd9cdfa6-fb11-4421-bc02-b82bfc53c85e",
     "BookId": "8fc12d12-e0fd-4d75-8ee4-8dd684923ae4",
     "Title": "Krakatit",
-    "Author": "Karel Čapek",
+    "Author": "Karel \u010Capek",
     "Isbn": "978-80-257-3672-5",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:08.935081Z"
@@ -66,7 +66,7 @@
     "Id": "97204c26-0a34-4f32-943e-7d926f430194",
     "BookId": "7b044355-fafc-4265-9448-11cd46ba7686",
     "Title": "Kytice",
-    "Author": "Karel Jaromír Erben",
+    "Author": "Karel Jarom\u00EDr Erben",
     "Isbn": "978-80-242-2881-2",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:09.3857686Z"
@@ -74,8 +74,8 @@
   {
     "Id": "4dc7bcf6-251c-4461-8c6a-f40dc5748ecd",
     "BookId": "506aa11e-c7e7-430b-b7e3-7724ec569de8",
-    "Title": "Osudy dobrého vojáka Švejka",
-    "Author": "Jaroslav Hašek",
+    "Title": "Osudy dobr\u00E9ho voj\u00E1ka \u0160vejka",
+    "Author": "Jaroslav Ha\u0161ek",
     "Isbn": "978-80-242-3530-8",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:10.1874643Z"
@@ -83,8 +83,8 @@
   {
     "Id": "ff68ae50-bdfc-4119-add4-c41c98ac5c39",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:10.6294135Z"
@@ -92,8 +92,8 @@
   {
     "Id": "946f2557-e861-4a6b-9c2c-890ea4214271",
     "BookId": "874c5bf5-af4d-491f-9c66-7b2bd0b7aefa",
-    "Title": "Povídky z jedné kapsy",
-    "Author": "Karel Čapek",
+    "Title": "Pov\u00EDdky z jedn\u00E9 kapsy",
+    "Author": "Karel \u010Capek",
     "Isbn": "978-80-242-2420-3",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:11.0131099Z"
@@ -101,8 +101,8 @@
   {
     "Id": "5ae41214-7f89-49d8-968b-e094152ce3b4",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:11.8278154Z"
@@ -110,8 +110,8 @@
   {
     "Id": "b685e0be-dba3-4a33-a9dd-05155a65cd81",
     "BookId": "506aa11e-c7e7-430b-b7e3-7724ec569de8",
-    "Title": "Osudy dobrého vojáka Švejka",
-    "Author": "Jaroslav Hašek",
+    "Title": "Osudy dobr\u00E9ho voj\u00E1ka \u0160vejka",
+    "Author": "Jaroslav Ha\u0161ek",
     "Isbn": "978-80-242-3530-8",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:12.2775845Z"
@@ -120,7 +120,7 @@
     "Id": "71789058-7d61-46de-91e1-9714907e1ac0",
     "BookId": "7b044355-fafc-4265-9448-11cd46ba7686",
     "Title": "Kytice",
-    "Author": "Karel Jaromír Erben",
+    "Author": "Karel Jarom\u00EDr Erben",
     "Isbn": "978-80-242-2881-2",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:13.1703648Z"
@@ -128,8 +128,8 @@
   {
     "Id": "9ec53f26-2fa0-43c7-8b98-f357fceb1be6",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:14.533481Z"
@@ -137,8 +137,8 @@
   {
     "Id": "12a075d5-12b2-4acc-aec8-0170b2e3e74e",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:15.3666455Z"
@@ -146,8 +146,8 @@
   {
     "Id": "ec620085-bb78-414c-8957-645bc990a0c2",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 1,
     "OccurredAtUtc": "2025-12-09T13:59:15.8995875Z"
@@ -155,12 +155,28 @@
   {
     "Id": "55cc0193-3ed9-46b7-9fb5-9f0eb81137cd",
     "BookId": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "Isbn": "978-80-7432-997-8",
     "Action": 2,
     "OccurredAtUtc": "2025-12-09T13:59:17.0967307Z"
+  },
+  {
+    "Id": "586da0a1-f10a-40aa-9dbe-3dc7b5654f1c",
+    "BookId": "cfbdc8a0-a93a-47be-9155-52a9c5454ea9",
+    "Title": "E2E-1d2d",
+    "Author": "Playwright Tester",
+    "Isbn": "978-6245911",
+    "Action": 1,
+    "OccurredAtUtc": "2025-12-10T14:03:01.0379945Z"
+  },
+  {
+    "Id": "e1956600-490e-48d0-967c-41e6dd6ddf60",
+    "BookId": "cfbdc8a0-a93a-47be-9155-52a9c5454ea9",
+    "Title": "E2E-1d2d",
+    "Author": "Playwright Tester",
+    "Isbn": "978-6245911",
+    "Action": 2,
+    "OccurredAtUtc": "2025-12-10T14:03:01.308838Z"
   }
 ]
-
-

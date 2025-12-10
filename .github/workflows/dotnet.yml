@@ -62,17 +62,14 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      - name: Install Playwright CLI
-        run: dotnet tool install --global Microsoft.Playwright.CLI
-
-      - name: Install Playwright browsers
-        run: playwright install --with-deps
-
       - name: Restore
         run: dotnet restore LibraryManager.sln
 
       - name: Build
         run: dotnet build LibraryManager.sln --configuration Release --no-restore
+
+      - name: Install Playwright browsers (dotnet binding)
+        run: pwsh ./tests/LibraryApp.Tests/bin/Release/net8.0/playwright.ps1 install --with-deps
 
       - name: Start app
         run: dotnet run --project src/LibraryApp/LibraryApp.csproj --configuration Release --urls http://localhost:5174 &

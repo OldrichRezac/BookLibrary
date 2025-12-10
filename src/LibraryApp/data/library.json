@@ -1,8 +1,8 @@
 [
   {
     "Id": "2f83ae5b-2b74-4635-9000-bd0ab7364f82",
-    "Title": "Babička",
-    "Author": "Božena Němcová",
+    "Title": "Babi\u010Dka",
+    "Author": "Bo\u017Eena N\u011Bmcov\u00E1",
     "PublishedYear": 1855,
     "Isbn": "978-80-206-0747-4",
     "TotalCopies": 3,
@@ -11,7 +11,7 @@
   {
     "Id": "3872d144-3c42-4576-b67f-cb9ff68d31e1",
     "Title": "Saturnin",
-    "Author": "Zdeněk Jirotka",
+    "Author": "Zden\u011Bk Jirotka",
     "PublishedYear": 1942,
     "Isbn": "978-80-206-1129-7",
     "TotalCopies": 2,
@@ -19,7 +19,7 @@
   },
   {
     "Id": "e4085458-a835-4409-ab4d-d34ba8c23171",
-    "Title": "Spalovač mrtvol",
+    "Title": "Spalova\u010D mrtvol",
     "Author": "Ladislav Fuks",
     "PublishedYear": 1967,
     "Isbn": "978-80-257-2124-0",
@@ -29,7 +29,7 @@
   {
     "Id": "7b044355-fafc-4265-9448-11cd46ba7686",
     "Title": "Kytice",
-    "Author": "Karel Jaromír Erben",
+    "Author": "Karel Jarom\u00EDr Erben",
     "PublishedYear": 1853,
     "Isbn": "978-80-242-2881-2",
     "TotalCopies": 3,
@@ -37,8 +37,8 @@
   },
   {
     "Id": "506aa11e-c7e7-430b-b7e3-7724ec569de8",
-    "Title": "Osudy dobrého vojáka Švejka",
-    "Author": "Jaroslav Hašek",
+    "Title": "Osudy dobr\u00E9ho voj\u00E1ka \u0160vejka",
+    "Author": "Jaroslav Ha\u0161ek",
     "PublishedYear": 1923,
     "Isbn": "978-80-242-3530-8",
     "TotalCopies": 3,
@@ -46,8 +46,8 @@
   },
   {
     "Id": "97324c2c-cb90-4750-b2f3-7a21092d7901",
-    "Title": "Bylo nás pět",
-    "Author": "Karel Poláček",
+    "Title": "Bylo n\u00E1s p\u011Bt",
+    "Author": "Karel Pol\u00E1\u010Dek",
     "PublishedYear": 1946,
     "Isbn": "978-80-00-05545-7",
     "TotalCopies": 2,
@@ -55,8 +55,8 @@
   },
   {
     "Id": "874c5bf5-af4d-491f-9c66-7b2bd0b7aefa",
-    "Title": "Povídky z jedné kapsy",
-    "Author": "Karel Čapek",
+    "Title": "Pov\u00EDdky z jedn\u00E9 kapsy",
+    "Author": "Karel \u010Capek",
     "PublishedYear": 1929,
     "Isbn": "978-80-242-2420-3",
     "TotalCopies": 2,
@@ -64,8 +64,8 @@
   },
   {
     "Id": "767717da-0ecd-4a6b-8458-6227c2e22917",
-    "Title": "Válka s Mloky",
-    "Author": "Karel Čapek",
+    "Title": "V\u00E1lka s Mloky",
+    "Author": "Karel \u010Capek",
     "PublishedYear": 1936,
     "Isbn": "978-80-257-2501-9",
     "TotalCopies": 2,
@@ -73,7 +73,7 @@
   },
   {
     "Id": "d721077d-6483-4501-a3e0-69c2874b6688",
-    "Title": "Smrt krásných srnců",
+    "Title": "Smrt kr\u00E1sn\u00FDch srnc\u016F",
     "Author": "Ota Pavel",
     "PublishedYear": 1971,
     "Isbn": "978-80-204-3717-5",
@@ -82,7 +82,7 @@
   },
   {
     "Id": "0f86982b-290a-441d-9200-5e1f20bff86e",
-    "Title": "Dům o tisíci patrech",
+    "Title": "D\u016Fm o tis\u00EDci patrech",
     "Author": "Jan Weiss",
     "PublishedYear": 1929,
     "Isbn": "978-80-7388-750-9",
@@ -91,7 +91,7 @@
   },
   {
     "Id": "48335524-d021-4eda-aeb0-cebe305a86be",
-    "Title": "Život je jinde",
+    "Title": "\u017Divot je jinde",
     "Author": "Milan Kundera",
     "PublishedYear": 1973,
     "Isbn": "978-80-207-1832-8",
@@ -100,8 +100,8 @@
   },
   {
     "Id": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
-    "Title": "Petrolejové lampy",
-    "Author": "Jaroslav Havlíček",
+    "Title": "Petrolejov\u00E9 lampy",
+    "Author": "Jaroslav Havl\u00ED\u010Dek",
     "PublishedYear": 1935,
     "Isbn": "978-80-7432-997-8",
     "TotalCopies": 1,
@@ -110,10 +110,46 @@
   {
     "Id": "8fc12d12-e0fd-4d75-8ee4-8dd684923ae4",
     "Title": "Krakatit",
-    "Author": "Karel Čapek",
+    "Author": "Karel \u010Capek",
     "PublishedYear": 1924,
     "Isbn": "978-80-257-3672-5",
     "TotalCopies": 2,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "b7e0eb3e-8941-4312-a600-1bce43a65a5a",
+    "Title": "E2E-31c1",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-1296810",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "d25fe2d9-ff04-4d3e-b2df-bb3c355708e9",
+    "Title": "E2E-91ab",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-6681939",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "3c42ef40-a1d8-4c73-8989-0b80c5f8b3bd",
+    "Title": "E2E-5b8e",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-4385779",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "cfbdc8a0-a93a-47be-9155-52a9c5454ea9",
+    "Title": "E2E-1d2d",
+    "Author": "Playwright Tester",
+    "PublishedYear": 2024,
+    "Isbn": "978-6245911",
+    "TotalCopies": 1,
     "AvailableCopies": 1
   }
 ]

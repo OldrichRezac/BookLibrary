@@ -51,7 +51,8 @@ public class BooksPlaywrightTests : IClassFixture<CustomWebApplicationFactory>
         await page.FillAsync("input[name='TotalCopies']", "1");
         await page.FillAsync("input[name='AvailableCopies']", "1");
         await page.GetByRole(AriaRole.Button, new() { Name = "Uložit" }).ClickAsync();
-        await page.WaitForURLAsync("**/Books*");
+        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+        await page.GotoAsync("/Books");
 
         var row = page.Locator("table tbody tr").Filter(new LocatorFilterOptions { HasText = title });
         Assert.Equal(1, await row.CountAsync());
