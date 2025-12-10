@@ -32,13 +32,17 @@ jobs:
         run: dotnet restore LibraryManager.sln
 
       - name: Build
-        run: dotnet build LibraryManager.sln --configuration Release --no-restore
+        env:
+          APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || format('dev-{0}', github.run_number) }}
+        run: dotnet build LibraryManager.sln --configuration Release --no-restore /p:InformationalVersion=${{ env.APP_VERSION }}
 
       - name: Test
         run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal --filter "FullyQualifiedName!~Integration&FullyQualifiedName!~E2E"
 
       - name: Publish
-        run: dotnet publish src/LibraryApp/LibraryApp.csproj --configuration Release --output publish
+        env:
+          APP_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || format('dev-{0}', github.run_number) }}
+        run: dotnet publish src/LibraryApp/LibraryApp.csproj --configuration Release --output publish /p:InformationalVersion=${{ env.APP_VERSION }}
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
