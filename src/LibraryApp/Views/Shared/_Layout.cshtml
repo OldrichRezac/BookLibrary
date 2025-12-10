@@ -54,8 +54,59 @@
                     {
                         version = version.Substring(1);
                     }
+                    // Odstraň commit hash (část za +)
+                    var plusIndex = version.IndexOf('+');
+                    if (plusIndex > 0)
+                    {
+                        version = version.Substring(0, plusIndex);
+                    }
+                    // Pokud je verze "dev", zkus zjistit z git tagu
+                    if (version == "dev")
+                    {
+                        try
+                        {
+                            var baseDir = System.AppContext.BaseDirectory;
+                            var projectDir = System.IO.Path.GetFullPath(System.IO.Path.Combine(baseDir, "../../../.."));
+                            var startInfo = new System.Diagnostics.ProcessStartInfo
+                            {
+                                FileName = "git",
+                                Arguments = "describe --tags --exact-match",
+                                RedirectStandardOutput = true,
+                                RedirectStandardError = true,
+                                UseShellExecute = false,
+                                CreateNoWindow = true,
+                                WorkingDirectory = projectDir
+                            };
+                            using var process = System.Diagnostics.Process.Start(startInfo);
+                            if (process != null)
+                            {
+                                process.WaitForExit(1000);
+                                if (process.ExitCode == 0)
+                                {
+                                    var gitVersion = process.StandardOutput.ReadToEnd().Trim();
+                                    if (!string.IsNullOrWhiteSpace(gitVersion))
+                                    {
+                                        version = gitVersion;
+                                        if (version.StartsWith("v", StringComparison.OrdinalIgnoreCase))
+                                        {
+                                            version = version.Substring(1);
+                                        }
+                                        var plusIdx = version.IndexOf('+');
+                                        if (plusIdx > 0)
+                                        {
+                                            version = version.Substring(0, plusIdx);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        catch
+                        {
+                            // Ignoruj chyby při zjišťování verze z gitu
+                        }
+                    }
                 }
-                <small class="text-muted">v@(version)</small>
+                <small class="text-muted">Version: v@(version)</small>
             </div>
             <div>
                 <small>&copy; 2025 - LibraryApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></small>

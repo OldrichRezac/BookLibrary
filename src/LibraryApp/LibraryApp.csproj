@@ -7,6 +7,33 @@
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <Target Name="SetVersionFromGit" BeforeTargets="BeforeBuild" Condition="'$(InformationalVersion)' == ''">
+    <Exec Command="git describe --tags --exact-match 2&gt;nul || git describe --tags --always 2&gt;nul || echo dev" 
+          ConsoleToMSBuild="true" 
+          IgnoreExitCode="true"
+          StandardOutputImportance="low"
+          WorkingDirectory="$(MSBuildProjectDirectory)/../.."
+          Condition="'$(OS)' == 'Windows_NT'">
+      <Output TaskParameter="ConsoleOutput" PropertyName="GitVersionRaw" />
+    </Exec>
+    <Exec Command="git describe --tags --exact-match 2&gt;/dev/null || git describe --tags --always 2&gt;/dev/null || echo dev" 
+          ConsoleToMSBuild="true" 
+          IgnoreExitCode="true"
+          StandardOutputImportance="low"
+          WorkingDirectory="$(MSBuildProjectDirectory)/../.."
+          Condition="'$(OS)' != 'Windows_NT'">
+      <Output TaskParameter="ConsoleOutput" PropertyName="GitVersionRaw" />
+    </Exec>
+    <PropertyGroup>
+      <GitVersion>$(GitVersionRaw.Trim())</GitVersion>
+      <InformationalVersion Condition="'$(InformationalVersion)' == '' AND '$(GitVersion)' != '' AND '$(GitVersion)' != 'dev'">$(GitVersion)</InformationalVersion>
+      <InformationalVersion Condition="'$(InformationalVersion)' == ''">dev</InformationalVersion>
+    </PropertyGroup>
+  </Target>
+
+  <PropertyGroup>
     <InformationalVersion Condition="'$(InformationalVersion)' != ''">$(InformationalVersion)</InformationalVersion>
     <InformationalVersion Condition="'$(InformationalVersion)' == ''">dev</InformationalVersion>
   </PropertyGroup>
