@@ -1,0 +1,160 @@
+@model HistoryListViewModel
+@{
+    ViewData["Title"] = "Historie výpůjček";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h1 class="h3">Historie výpůjček</h1>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row gy-2 gx-3 align-items-end">
+            <div class="col-sm-3">
+                <label class="form-label" for="title">Název</label>
+                <input class="form-control" id="title" name="Title" value="@Model.Filters.Title" placeholder="Celý název nebo část" />
+            </div>
+            <div class="col-sm-3">
+                <label class="form-label" for="isbn">ISBN</label>
+                <input class="form-control" id="isbn" name="Isbn" value="@Model.Filters.Isbn" placeholder="978-80..." />
+            </div>
+            <div class="col-sm-2">
+                <label class="form-label" for="action">Akce</label>
+                <select class="form-select" id="action" name="Action">
+                    <option value="">Vše</option>
+                    <option value="Loan" selected="@(Model.Filters.Action == LoanAction.Loan)">Půjčení</option>
+                    <option value="Return" selected="@(Model.Filters.Action == LoanAction.Return)">Vrácení</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <label class="form-label" for="from">Od</label>
+                <input type="text"
+                       class="form-control js-date"
+                       id="from"
+                       name="FromUtc"
+                       value="@(Model.Filters.FromUtc?.ToLocalTime().ToString("dd.MM.yyyy"))"
+                       placeholder="dd.mm.rrrr" />
+            </div>
+            <div class="col-sm-2">
+                <label class="form-label" for="to">Do</label>
+                <input type="text"
+                       class="form-control js-date"
+                       id="to"
+                       name="ToUtc"
+                       value="@(Model.Filters.ToUtc?.ToLocalTime().ToString("dd.MM.yyyy"))"
+                       placeholder="dd.mm.rrrr" />
+            </div>
+            <div class="col-sm-2 d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Hledat</button>
+                @if (Model.Filters.HasFilters)
+                {
+                    <a asp-action="Index" class="btn btn-secondary">Vymazat</a>
+                }
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead>
+            <tr>
+                <th>Datum</th>
+                <th>Akce</th>
+                <th>Název</th>
+                <th>Autor</th>
+                <th>ISBN</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (!Model.Entries.Any())
+            {
+                <tr>
+                    <td colspan="5" class="text-center text-muted">Žádné záznamy.</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var entry in Model.Entries)
+                {
+                    <tr>
+                        <td>@entry.OccurredAtUtc.ToLocalTime().ToString("dd.MM.yyyy HH:mm")</td>
+                        <td>
+                            @if (entry.Action == LoanAction.Loan)
+                            {
+                                <span class="badge bg-primary">Půjčeno</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">Vráceno</span>
+                            }
+                        </td>
+                        <td>@entry.Title</td>
+                        <td>@entry.Author</td>
+                        <td>@entry.Isbn</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="d-flex justify-content-between align-items-center">
+    <div>
+        Zobrazeno @Model.Entries.Count z @Model.TotalCount (strana @Model.Page)
+    </div>
+    <div class="d-flex align-items-center gap-2">
+        <form method="get" class="d-flex align-items-center gap-2">
+            <input type="hidden" name="Title" value="@Model.Filters.Title" />
+            <input type="hidden" name="Isbn" value="@Model.Filters.Isbn" />
+            <input type="hidden" name="Action" value="@(Model.Filters.Action?.ToString())" />
+            <input type="hidden" name="FromUtc" value="@(Model.Filters.FromUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="ToUtc" value="@(Model.Filters.ToUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="Page" value="@(Model.Page - 1)" />
+            <input type="hidden" name="PageSize" value="@Model.PageSize" />
+            <button type="submit" class="btn btn-outline-secondary btn-sm" @(Model.HasPrevious ? "" : "disabled")>← Zpět</button>
+        </form>
+
+        <form method="get" class="d-flex align-items-center gap-2">
+            <input type="hidden" name="Title" value="@Model.Filters.Title" />
+            <input type="hidden" name="Isbn" value="@Model.Filters.Isbn" />
+            <input type="hidden" name="Action" value="@(Model.Filters.Action?.ToString())" />
+            <input type="hidden" name="FromUtc" value="@(Model.Filters.FromUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="ToUtc" value="@(Model.Filters.ToUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="Page" value="@(Model.Page + 1)" />
+            <input type="hidden" name="PageSize" value="@Model.PageSize" />
+            <button type="submit" class="btn btn-outline-secondary btn-sm" @(Model.HasNext ? "" : "disabled")>Další →</button>
+        </form>
+
+        <form method="get" class="d-flex align-items-center gap-2">
+            <input type="hidden" name="Title" value="@Model.Filters.Title" />
+            <input type="hidden" name="Isbn" value="@Model.Filters.Isbn" />
+            <input type="hidden" name="Action" value="@(Model.Filters.Action?.ToString())" />
+            <input type="hidden" name="FromUtc" value="@(Model.Filters.FromUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="ToUtc" value="@(Model.Filters.ToUtc?.ToString("dd.MM.yyyy"))" />
+            <input type="hidden" name="Page" value="1" />
+            <label class="form-label mb-0" for="pageSize">Záznamů</label>
+            <select id="pageSize" name="PageSize" class="form-select form-select-sm" onchange="this.form.submit()">
+                <option value="5" selected="@(Model.PageSize == 5)">5</option>
+                <option value="10" selected="@(Model.PageSize == 10)">10</option>
+                <option value="20" selected="@(Model.PageSize == 20)">20</option>
+            </select>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.flatpickr) {
+                flatpickr('.js-date', {
+                    altInput: true,
+                    altFormat: 'd.m.Y',
+                    dateFormat: 'd.m.Y',
+                    locale: 'cs'
+                });
+            }
+        });
+    </script>
+}
+

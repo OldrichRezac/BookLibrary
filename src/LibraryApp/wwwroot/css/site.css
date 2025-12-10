@@ -1,0 +1,56 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.navbar-main {
+  background: linear-gradient(90deg, #0d6efd 0%, #0b5ed7 50%, #0a58ca 100%);
+}
+
+.navbar-main .navbar-brand {
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.navbar-main .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+}
+
+.navbar-main .nav-link:hover,
+.navbar-main .nav-link:focus {
+  color: #fff;
+}
+
+.navbar-main .nav-link.active {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-thickness: 0.14rem;
+  text-underline-offset: 0.35rem;
+}
+
+.navbar-main .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.navbar-main .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.15rem rgba(255, 255, 255, 0.45);
+}

@@ -1,0 +1,119 @@
+[
+  {
+    "Id": "2f83ae5b-2b74-4635-9000-bd0ab7364f82",
+    "Title": "Babička",
+    "Author": "Božena Němcová",
+    "PublishedYear": 1855,
+    "Isbn": "978-80-206-0747-4",
+    "TotalCopies": 3,
+    "AvailableCopies": 3
+  },
+  {
+    "Id": "3872d144-3c42-4576-b67f-cb9ff68d31e1",
+    "Title": "Saturnin",
+    "Author": "Zdeněk Jirotka",
+    "PublishedYear": 1942,
+    "Isbn": "978-80-206-1129-7",
+    "TotalCopies": 2,
+    "AvailableCopies": 2
+  },
+  {
+    "Id": "e4085458-a835-4409-ab4d-d34ba8c23171",
+    "Title": "Spalovač mrtvol",
+    "Author": "Ladislav Fuks",
+    "PublishedYear": 1967,
+    "Isbn": "978-80-257-2124-0",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "7b044355-fafc-4265-9448-11cd46ba7686",
+    "Title": "Kytice",
+    "Author": "Karel Jaromír Erben",
+    "PublishedYear": 1853,
+    "Isbn": "978-80-242-2881-2",
+    "TotalCopies": 3,
+    "AvailableCopies": 3
+  },
+  {
+    "Id": "506aa11e-c7e7-430b-b7e3-7724ec569de8",
+    "Title": "Osudy dobrého vojáka Švejka",
+    "Author": "Jaroslav Hašek",
+    "PublishedYear": 1923,
+    "Isbn": "978-80-242-3530-8",
+    "TotalCopies": 3,
+    "AvailableCopies": 3
+  },
+  {
+    "Id": "97324c2c-cb90-4750-b2f3-7a21092d7901",
+    "Title": "Bylo nás pět",
+    "Author": "Karel Poláček",
+    "PublishedYear": 1946,
+    "Isbn": "978-80-00-05545-7",
+    "TotalCopies": 2,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "874c5bf5-af4d-491f-9c66-7b2bd0b7aefa",
+    "Title": "Povídky z jedné kapsy",
+    "Author": "Karel Čapek",
+    "PublishedYear": 1929,
+    "Isbn": "978-80-242-2420-3",
+    "TotalCopies": 2,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "767717da-0ecd-4a6b-8458-6227c2e22917",
+    "Title": "Válka s Mloky",
+    "Author": "Karel Čapek",
+    "PublishedYear": 1936,
+    "Isbn": "978-80-257-2501-9",
+    "TotalCopies": 2,
+    "AvailableCopies": 2
+  },
+  {
+    "Id": "d721077d-6483-4501-a3e0-69c2874b6688",
+    "Title": "Smrt krásných srnců",
+    "Author": "Ota Pavel",
+    "PublishedYear": 1971,
+    "Isbn": "978-80-204-3717-5",
+    "TotalCopies": 2,
+    "AvailableCopies": 2
+  },
+  {
+    "Id": "0f86982b-290a-441d-9200-5e1f20bff86e",
+    "Title": "Dům o tisíci patrech",
+    "Author": "Jan Weiss",
+    "PublishedYear": 1929,
+    "Isbn": "978-80-7388-750-9",
+    "TotalCopies": 1,
+    "AvailableCopies": 0
+  },
+  {
+    "Id": "48335524-d021-4eda-aeb0-cebe305a86be",
+    "Title": "Život je jinde",
+    "Author": "Milan Kundera",
+    "PublishedYear": 1973,
+    "Isbn": "978-80-207-1832-8",
+    "TotalCopies": 2,
+    "AvailableCopies": 2
+  },
+  {
+    "Id": "0a00abbf-bca7-43da-ab4f-c48145b4971c",
+    "Title": "Petrolejové lampy",
+    "Author": "Jaroslav Havlíček",
+    "PublishedYear": 1935,
+    "Isbn": "978-80-7432-997-8",
+    "TotalCopies": 1,
+    "AvailableCopies": 1
+  },
+  {
+    "Id": "8fc12d12-e0fd-4d75-8ee4-8dd684923ae4",
+    "Title": "Krakatit",
+    "Author": "Karel Čapek",
+    "PublishedYear": 1924,
+    "Isbn": "978-80-257-3672-5",
+    "TotalCopies": 2,
+    "AvailableCopies": 1
+  }
+]

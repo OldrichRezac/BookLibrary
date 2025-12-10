@@ -1,0 +1,61 @@
+@model BookInputModel
+@{
+    ViewData["Title"] = "Přidat knihu";
+}
+
+<h1 class="h3 mb-4">Přidat knihu</h1>
+
+<form asp-action="Create" method="post" class="card shadow-sm">
+    <div class="card-body">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Author" class="form-label"></label>
+            <input asp-for="Author" class="form-control" />
+            <span asp-validation-for="Author" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="PublishedYear" class="form-label"></label>
+                <input asp-for="PublishedYear" class="form-control" />
+                <span asp-validation-for="PublishedYear" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="Isbn" class="form-label"></label>
+                <input asp-for="Isbn" class="form-control" />
+                <span asp-validation-for="Isbn" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label asp-for="TotalCopies" class="form-label"></label>
+                <input asp-for="TotalCopies" class="form-control" />
+                <span asp-validation-for="TotalCopies" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label asp-for="AvailableCopies" class="form-label"></label>
+                <input asp-for="AvailableCopies" class="form-control" />
+                <span asp-validation-for="AvailableCopies" class="text-danger"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <a class="btn btn-outline-secondary" asp-action="Index">Zpět</a>
+        <button type="submit" class="btn btn-primary">Uložit</button>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+

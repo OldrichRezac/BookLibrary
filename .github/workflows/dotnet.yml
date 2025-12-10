@@ -1,0 +1,131 @@
+name: .NET CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      artifact_name:
+        description: "Artifact name to deploy (např. libraryapp-v1.0.0 nebo libraryapp-run-123)"
+        required: true
+
+env:
+  ARTIFACT_NAME: ${{ github.ref_type == 'tag' && format('libraryapp-{0}', github.ref_name) || format('libraryapp-run-{0}', github.run_number) }}
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore
+        run: dotnet restore LibraryManager.sln
+
+      - name: Build
+        run: dotnet build LibraryManager.sln --configuration Release --no-restore
+
+      - name: Test
+        run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal
+
+      - name: Publish
+        run: dotnet publish src/LibraryApp/LibraryApp.csproj --configuration Release --output publish
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: publish/**
+
+  e2e:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+
+    env:
+      E2E_BASEURL: http://localhost:5174
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Install Playwright CLI
+        run: dotnet tool install --global Microsoft.Playwright.CLI
+
+      - name: Install Playwright browsers
+        run: playwright install --with-deps
+
+      - name: Restore
+        run: dotnet restore LibraryManager.sln
+
+      - name: Build
+        run: dotnet build LibraryManager.sln --configuration Release --no-restore
+
+      - name: Start app
+        run: dotnet run --project src/LibraryApp/LibraryApp.csproj --configuration Release --urls http://localhost:5174 &
+
+      - name: Wait for app
+        run: |
+          for i in {1..30}; do
+            if curl -fsS http://localhost:5174 > /dev/null; then
+              echo "App is up"; exit 0
+            fi
+            sleep 1
+          done
+          echo "App did not start in time" >&2
+          exit 1
+
+      - name: Run tests (including E2E)
+        run: dotnet test LibraryManager.sln --configuration Release --no-build --verbosity normal
+        env:
+          E2E_BASEURL: ${{ env.E2E_BASEURL }}
+
+  deploy:
+    # Deploy pouze na tag push (např. v1.2.3)
+    if: github.event_name == 'push' && github.ref_type == 'tag'
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: publish
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ vars.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: publish
+
+  redeploy:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.event.inputs.artifact_name != '' && github.event.inputs.artifact_name || env.ARTIFACT_NAME }}
+          path: publish
+
+      - name: Deploy to Azure Web App (manual redeploy)
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: ${{ vars.AZURE_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: publish
+
