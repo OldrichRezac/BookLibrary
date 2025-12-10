@@ -93,7 +93,7 @@ jobs:
   deploy:
     # Deploy pouze na tag push (např. v1.2.3)
     if: github.event_name == 'push' && github.ref_type == 'tag'
-    needs: build-and-test
+    needs: e2e
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
