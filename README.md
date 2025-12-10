@@ -80,13 +80,9 @@ git push origin v1.0.0
 Pro manuální redeploy existujícího artefaktu použij GitHub Actions → Run workflow → zadej název artefaktu.
 
 **Požadované nastavení v GitHubu:**
-- **Variable**: `AZURE_WEBAPP_NAME` = název Azure web app (např. `AppLibraryNet`)
+- **Variable**: `AZURE_WEBAPP_NAME` = název Azure web app (v našem případě. `AppLibraryNet`)
 - **Secret**: `AZURE_WEBAPP_PUBLISH_PROFILE` = obsah publish profilu z Azure Portal
 
-**Azure App Settings:**
-Pro produkční prostředí nastav v Azure Portal → Configuration → Application settings:
-- `Storage:FilePath` = `/home/site/wwwroot/data/library.json`
-- `HistoryStorage:FilePath` = `/home/site/wwwroot/data/history.json`
 
 ## Poznámky k implementaci
 - Úložiště `JsonBookRepository` pracuje se souborem `data/library.json` (zámek pro bezpečné zápisy).
