@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.Json;
 using LibraryApp.Models;
 using LibraryApp.Tests.Integration;
 using Microsoft.Playwright;
@@ -76,6 +77,9 @@ public class BooksPlaywrightTests : IClassFixture<CustomWebApplicationFactory>
 
         var historyRow = page.Locator("table tbody tr").Filter(new LocatorFilterOptions { HasText = isbn });
         Assert.True(await historyRow.CountAsync() >= 1);
+
+        // Uklidíme testovací data z JSON souborů (odstraníme záznamy začínající na E2E-).
+        await CleanupE2EJsonAsync(title);
     }
 
     private static async Task<IPlaywright> CreatePlaywrightOrSkipAsync()
@@ -88,6 +92,66 @@ public class BooksPlaywrightTests : IClassFixture<CustomWebApplicationFactory>
         {
             throw new SkipException("Playwright není nainstalován. Spusť: dotnet tool install --global Microsoft.Playwright.CLI && playwright install");
         }
+    }
+
+    private static async Task CleanupE2EJsonAsync(string title)
+    {
+        var titlePrefix = title.Split('-').FirstOrDefault() ?? "E2E";
+
+        // Cesty relativně k solution root (běh testů z bin/Release/net8.0).
+        var libraryPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../src/LibraryApp/data/library.json"));
+        var historyPath = Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "../../../src/LibraryApp/data/history.json"));
+
+        static async Task RemoveE2EBooksAsync(string path)
+        {
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    return;
+                }
+
+                var json = await File.ReadAllTextAsync(path);
+                var books = JsonSerializer.Deserialize<List<Book>>(json) ?? new List<Book>();
+                var filtered = books.Where(b => b.Title?.StartsWith("E2E-", StringComparison.OrdinalIgnoreCase) == false).ToList();
+                if (filtered.Count != books.Count)
+                {
+                    var options = new JsonSerializerOptions { WriteIndented = true };
+                    await File.WriteAllTextAsync(path, JsonSerializer.Serialize(filtered, options));
+                }
+            }
+            catch
+            {
+                // Ignoruj chyby při úklidu lokálních souborů
+            }
+        }
+
+        static async Task RemoveE2EHistoryAsync(string path)
+        {
+            try
+            {
+                if (!File.Exists(path))
+                {
+                    return;
+                }
+
+                var json = await File.ReadAllTextAsync(path);
+                var entries = JsonSerializer.Deserialize<List<LoanHistoryEntry>>(json) ?? new List<LoanHistoryEntry>();
+                var filtered = entries.Where(h => h.Title?.StartsWith("E2E-", StringComparison.OrdinalIgnoreCase) == false).ToList();
+                if (filtered.Count != entries.Count)
+                {
+                    var options = new JsonSerializerOptions { WriteIndented = true };
+                    await File.WriteAllTextAsync(path, JsonSerializer.Serialize(filtered, options));
+                }
+            }
+            catch
+            {
+                // Ignoruj chyby při úklidu lokálních souborů
+            }
+        }
+
+        await RemoveE2EBooksAsync(libraryPath);
+        await RemoveE2EHistoryAsync(historyPath);
     }
 }
 
