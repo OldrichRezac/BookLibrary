@@ -18,3 +18,4 @@ public class HistorySearchModel
         ToUtc.HasValue;
 }
 
+

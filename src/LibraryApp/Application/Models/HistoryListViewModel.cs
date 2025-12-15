@@ -11,3 +11,4 @@ public class HistoryListViewModel
     public bool HasNext => Page * PageSize < TotalCount;
 }
 
+
