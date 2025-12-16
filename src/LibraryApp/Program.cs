@@ -1,4 +1,5 @@
 using LibraryApp.Services;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<JsonRepositoryOptions>(builder.Configuration.GetSection("Storage"));
 builder.Services.Configure<HistoryRepositoryOptions>(builder.Configuration.GetSection("HistoryStorage"));
+
+// Default: JSON repositories (current behavior)
 builder.Services.AddSingleton<IBookRepository, JsonBookRepository>();
 builder.Services.AddSingleton<IHistoryRepository, JsonHistoryRepository>();
+
+// To switch to EF Core (SQLite), uncomment the following and comment out the JSON registrations above:
+// builder.Services.AddDbContext<LibraryDbContext>(options =>
+//     options.UseSqlite(builder.Configuration.GetConnectionString("LibraryDb")));
+// builder.Services.AddScoped<IBookRepository, EfBookRepository>();
+// builder.Services.AddScoped<IHistoryRepository, EfHistoryRepository>();
+
 builder.Services.AddScoped<IHistoryService, HistoryService>();
 builder.Services.AddScoped<IBookService, BookService>();
 
