@@ -1,4 +1,4 @@
-namespace LibraryApp.Models;
+namespace LibraryApp.Business;
 
 public class LoanHistoryEntry
 {

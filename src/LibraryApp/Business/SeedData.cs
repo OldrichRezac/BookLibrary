@@ -1,4 +1,3 @@
-using LibraryApp.Models;
 using LibraryApp.DataAccess;
 using Microsoft.Extensions.DependencyInjection;
 

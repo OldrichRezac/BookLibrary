@@ -1,4 +1,4 @@
-namespace LibraryApp.Models;
+namespace LibraryApp.Presentation.Models;
 
 public class BookSearchModel
 {

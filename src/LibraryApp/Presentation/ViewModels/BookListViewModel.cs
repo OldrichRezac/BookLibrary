@@ -1,4 +1,7 @@
-namespace LibraryApp.Models;
+using LibraryApp.Business;
+using LibraryApp.Presentation.Models;
+
+namespace LibraryApp.Presentation.ViewModels;
 
 public class BookListViewModel
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace LibraryApp.Models;
+namespace LibraryApp.Presentation.Models;
 
 public class BookInputModel
 {

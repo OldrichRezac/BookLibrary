@@ -1,6 +1,8 @@
 using System.Net;
 using System.Net.Http.Json;
-using LibraryApp.Models;
+using LibraryApp.Presentation.Models;
+using LibraryApp.Business;
+using LibraryApp.Business;
 using LibraryApp.Business;
 using LibraryApp.DataAccess;
 using Xunit;

@@ -1,4 +1,4 @@
-namespace LibraryApp.Models;
+namespace LibraryApp.Presentation.ViewModels;
 
 public class ErrorViewModel
 {

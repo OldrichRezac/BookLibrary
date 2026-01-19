@@ -1,5 +1,6 @@
-using LibraryApp.Models;
 using LibraryApp.Business;
+using LibraryApp.Presentation.Models;
+using LibraryApp.Presentation.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryApp.Controllers;

@@ -1,6 +1,8 @@
 using System.Globalization;
 using System.Text.Json;
-using LibraryApp.Models;
+using LibraryApp.Presentation.Models;
+using LibraryApp.Business;
+using LibraryApp.Business;
 using LibraryApp.Tests.Integration;
 using Microsoft.Playwright;
 using Xunit;

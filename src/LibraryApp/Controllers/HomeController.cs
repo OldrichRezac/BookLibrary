@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using LibraryApp.Models;
+using LibraryApp.Presentation.ViewModels;
 
 namespace LibraryApp.Controllers;
 

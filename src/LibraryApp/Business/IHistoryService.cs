@@ -1,4 +1,4 @@
-using LibraryApp.Models;
+using LibraryApp.Presentation.Models;
 
 namespace LibraryApp.Business;
 

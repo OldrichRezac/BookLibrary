@@ -1,4 +1,6 @@
-namespace LibraryApp.Models;
+using LibraryApp.Business;
+
+namespace LibraryApp.Presentation.Models;
 
 public class HistorySearchModel
 {
