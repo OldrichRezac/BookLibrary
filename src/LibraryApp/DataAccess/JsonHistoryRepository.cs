@@ -2,7 +2,7 @@ using System.Text.Json;
 using LibraryApp.Models;
 using Microsoft.Extensions.Options;
 
-namespace LibraryApp.Services;
+namespace LibraryApp.DataAccess;
 
 public class JsonHistoryRepository : IHistoryRepository
 {

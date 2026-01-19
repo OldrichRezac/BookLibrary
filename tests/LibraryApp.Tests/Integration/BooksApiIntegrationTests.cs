@@ -1,7 +1,8 @@
 using System.Net;
 using System.Net.Http.Json;
 using LibraryApp.Models;
-using LibraryApp.Services;
+using LibraryApp.Business;
+using LibraryApp.DataAccess;
 using Xunit;
 
 namespace LibraryApp.Tests.Integration;

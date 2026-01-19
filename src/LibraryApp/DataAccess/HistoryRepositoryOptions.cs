@@ -1,4 +1,4 @@
-namespace LibraryApp.Services;
+namespace LibraryApp.DataAccess;
 
 public class HistoryRepositoryOptions
 {

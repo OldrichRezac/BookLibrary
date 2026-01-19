@@ -1,6 +1,7 @@
 using LibraryApp.Models;
+using LibraryApp.DataAccess;
 
-namespace LibraryApp.Services;
+namespace LibraryApp.Business;
 
 public class HistoryService : IHistoryService
 {
